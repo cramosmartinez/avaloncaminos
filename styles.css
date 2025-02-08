@@ -1,0 +1,267 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Fondo negro */
+    color: white;
+    margin: 0;
+    padding: 0;
+    background-image: url('fondo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+#search-bar {
+    padding: 8px;
+    margin-top: 10px;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: white;
+    border: 1px solid #ddd;
+}
+
+#discord-btn {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente metálico */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    animation: glow 2s infinite alternate; /* Animación */
+}
+
+#discord-btn:hover {
+    background: linear-gradient(45deg, #7c1cb0, #3a7efd); /* Cambia el gradiente */
+}
+
+#resultados {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Asegura que las imágenes se distribuyan bien */
+}
+
+.resultado {
+    background-color: white;
+    color: black;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 20%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.resultado:hover {
+    transform: scale(1.05); /* Efecto de hover para hacer más interactivo */
+}
+
+.resultado img {
+    width: 100%; /* Ajusta las imágenes a un tamaño adecuado */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Recursos con imágenes y números */
+.recurso {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+}
+
+.recurso img {
+    width: 50px; /* Tamaño de las imágenes de los recursos */
+    height: 50px;
+    border-radius: 5px;
+}
+
+.numero {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-contenido {
+    background-color: #4b0082; /* Fondo morado metálico */
+    margin: 10% auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-contenido img {
+    display: block; /* Asegura que no se superponga con otros elementos */
+    width: 90%; /* Asegura que todas las imágenes se escalen al 90% del ancho del modal */
+    max-height: 80vh; /* Limita la altura al 80% de la ventana para evitar recortes */
+    object-fit: contain; /* Ajusta la imagen manteniendo sus proporciones */
+    margin: 0 auto; /* Centra la imagen dentro del modal */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Opcional: sombra para resaltar */
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    background-color: darkred;
+}
+
+/* Ventana de anuncios */
+.anuncios {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Fondo gradiente */
+    color: white;
+    padding: 15px;
+    border-radius: 15px; /* Bordes redondeados */
+    width: 250px;
+    z-index: 5; /* Cambiar z-index a 5 o menor que 20 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: animarAnuncio 1s ease-out; /* Aplica la animación */
+}
+
+.anuncios h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.anuncios p {
+    margin: 0;
+    font-size: 14px;
+}
+/* Animación de entrada para el anuncio */
+@keyframes animarAnuncio {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ventana de anuncios */
+.anuncios {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Fondo gradiente */
+    color: white;
+    padding: 15px;
+    border-radius: 15px; /* Bordes redondeados */
+    width: 250px;
+    z-index: 5; /* Cambiar z-index a 5 o menor que 20 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: animarAnuncio 1s ease-out; /* Aplica la animación */
+}
+
+.anuncios h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.anuncios p {
+    margin: 0;
+    font-size: 14px;
+}
+/* Estilos para el contenedor del video */
+#video-container {
+    display: yes; /* El video no se muestra inicialmente */
+    position: fixed; /* Fijar el contenedor en la parte inferior */
+    bottom: 20px; /* Separación desde la parte inferior de la pantalla */
+    left: 20px; /* Separación desde la parte izquierda de la pantalla */
+    text-align: center;
+    margin-top: 20px;
+    z-index: 10; /* Coloca el video por debajo de otros elementos, como los resultados */
+}
+
+/* Estilos para el iframe del video */
+#video-container iframe {
+    width: 400px;  /* Ancho del video ajustado */
+    height: 300px;  /* Alto del video ajustado */
+    border: none;
+    border-radius: 10px;  /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* Sombra para darle profundidad */
+}
+
+/* Estilos cuando el contenedor del video es visible */
+#video-container.show {
+    display: block;  /* Muestra el video cuando se agrega la clase 'show' */
+}
+
+/* Estilos para los resultados para asegurarse de que estén por encima del video */
+#resultados {
+    position: relative;
+    z-index: 20;  /* Asegura que los resultados estén por encima del video */
+}
+#desktop-version-btn {
+    padding: 12px 25px;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #2575fc, #6a11cb); /* Fondo gradiente */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+#desktop-version-btn:hover {
+    background-color: #45a049; /* Cambia el color de fondo al pasar el mouse */
+}
